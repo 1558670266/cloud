@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 public class HelloService {
     @Autowired
     RestTemplate restTemplate;
-    // 断路器配置，当无法调用如下方法时，就会调用自定的hiError方法
+    // 断路器配置，当无法调用如下方法时，就会调用自定的hiError方法111111
     @HystrixCommand(fallbackMethod = "hiError")
     public String hiService(String name) {
         String str1 = restTemplate.getForObject("http://service-provider/hi?name=" + name, String.class);
